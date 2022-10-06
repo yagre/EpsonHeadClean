@@ -5,7 +5,7 @@ hex_string_clean_color = "0000001b0140454a4c20313238342e340a40454a4c20202020200a
 hex_string_clean_all = "xxxxxxxxxxxxxx"
 raw_string = codecs.decode(hex_string_clean_color, "hex_codec")
 
-#Send to printer
+#Send to printer`s socket via LAN
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("192.168.0.108", 9100))
 s.send(raw_string) #.encode()
@@ -13,7 +13,7 @@ data  = s.recv(1024).decode()
 s.send("quit".encode())
 s.close()
 
-#Save binary file
+#Save binary file to send from router
 with open("EpsonHeadCleanColor.bin", "wb") as binary_file:
     binary_file.write(raw_string)
 
