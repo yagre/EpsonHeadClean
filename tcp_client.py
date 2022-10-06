@@ -16,3 +16,7 @@ s.close()
 #Save binary file
 with open("EpsonHeadCleanColor.bin", "wb") as binary_file:
     binary_file.write(raw_string)
+
+# send from linux via cron
+# monday/thursday at 08:00 am
+# 0 8 * * 1,4  nc 192.168.0.108 9100 < /root/EpsonHeadCleanColor.bin
