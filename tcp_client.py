@@ -7,7 +7,6 @@ hex_string_clean_blk = "0000001b0140454a4c20313238342e340a40454a4c20202020200a1b
 
 raw_string = codecs.decode(hex_string_clean_col, "hex_codec")
 
-
 #Send to printer`s socket via LAN
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(("192.168.0.108", 9100))
